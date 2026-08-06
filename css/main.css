@@ -1948,8 +1948,14 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
   left: -27px;
 }
 
+.about-bottom-image {
+  text-align: center;
+}
+
 .about-bottom-image img {
   vertical-align: bottom;
+  display: block;
+  margin: 0 auto;
 }
 
 
