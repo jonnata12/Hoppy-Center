@@ -238,6 +238,12 @@
 	* ------------------------------------------------------ */
 	(function ssInit() {
 
+		// parallax.js v1.4.2 auto-init relies on the jQuery 'ready' event,
+		// which jQuery 3 removed — initialize it explicitly instead
+		$(function() {
+			$('[data-parallax="scroll"]').parallax();
+		});
+
 		ssPreloader();
 		ssMobileMenu();
 		ssFitVids();

@@ -60,6 +60,7 @@
     <!-- mobile specific metas
    ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://*.amplitude.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 
     <!-- CSS
    ================================================== -->
@@ -141,10 +142,10 @@
 
         <ul class="home-social-list">
             <li>
-                <a href="https://www.instagram.com/hoppycenter/?utm_source=ig_web_button_share_sheet" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.instagram.com/hoppycenter/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/company/hoppy-center" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/company/hoppy-center" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a>
             </li>
         </ul>
         <!-- end home-social-list -->
@@ -272,10 +273,10 @@
 
                     <ul class="footer-social-list">
                         <li>
-                            <a href="https://www.instagram.com/hoppycenter/?utm_source=ig_web_button_share_sheet" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/hoppycenter/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/company/hoppy-center" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/company/hoppy-center" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a>
                         </li>
                     </ul>
                     
@@ -299,8 +300,8 @@
 
                     <ul class="list-links">
                         <li><a class="smoothscroll" href="#home">Home</a></li>
-                        <li><a href="https://hoppycenter.com/Terms/terms.html" target="_blank">Terms</a></li>
-                        <li><a href="https://hoppycenter.com/privacy-policy/privacy-policy.html" target="_blank">Privacy Policy</a></li>
+                        <li><a href="https://hoppycenter.com/Terms/terms.html" target="_blank" rel="noopener noreferrer">Terms</a></li>
+                        <li><a href="https://hoppycenter.com/privacy-policy/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
                     </ul>
                             
                 </div> <!-- end footer-site-links --> 
@@ -320,7 +321,7 @@
       		<div class="col-twelve">
 	      		<div class="copyright">
 		         	<span>© Hoppy Center 2026.</span>
-		         	<span>Design by <a href="http://www.styleshout.com/"target="_blank">styleshout</a></span>
+		         	<span>Design by <a href="https://www.styleshout.com/" target="_blank" rel="noopener noreferrer">styleshout</a></span>
 		         </div>
 
 		         <div id="go-top">
@@ -340,27 +341,14 @@
 
     <!-- Java Script
     ================================================== -->
-    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- analytics (Amplitude)
+    <!-- analytics (Amplitude, self-hosted)
     ================================================== -->
-    <script src="https://cdn.amplitude.com/libs/analytics-browser-2-min.js.gz"></script>
-    <script>
-        if (window.amplitude) {
-            amplitude.init('e4b639f3d12aa5905e877748a6400d68', {
-                autocapture: true
-            });
-            document.querySelectorAll('.download-badges a').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    amplitude.track('Store Badge Clicked', {
-                        store: link.classList.contains('badge-appstore') ? 'App Store' : 'Google Play'
-                    });
-                });
-            });
-        }
-    </script>
+    <script src="js/amplitude-2.45.5.min.js"></script>
+    <script src="js/analytics.js"></script>
 
 </body>
 
